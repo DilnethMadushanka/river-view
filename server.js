@@ -1,14 +1,19 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
+const os = require("os");
 const { DatabaseSync } = require("node:sqlite");
 
 const PORT = process.env.PORT || 3000;
 const KITCHEN_PIN = process.env.KITCHEN_PIN || "1234";
 const STATUSES = ["new", "preparing", "ready", "completed", "cancelled"];
 
-fs.mkdirSync(path.join(__dirname, "data"), { recursive: true });
-const db = new DatabaseSync(path.join(__dirname, "data", "riverview.db"));
+/* Serverless hosts (Vercel) have a read-only project folder, so fall back to the temp folder.
+   Data there is NOT permanent. Use a normal server (Render, Railway, VPS) for real orders. */
+let dataDir = path.join(__dirname, "data");
+try { fs.mkdirSync(dataDir, { recursive: true }); fs.accessSync(dataDir, fs.constants.W_OK); }
+catch (e) { dataDir = os.tmpdir(); }
+const db = new DatabaseSync(path.join(dataDir, "riverview.db"));
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS menu_items (
@@ -260,7 +265,9 @@ app.get("/img/:name", (req, res) => {
   res.redirect(302, `https://picsum.photos/seed/riverview-${seed}/${kind}`);
 });
 
-app.listen(PORT, () => {
+if (require.main === module) app.listen(PORT, () => {
   console.log(`River View site:     http://localhost:${PORT}`);
   console.log(`Kitchen dashboard:   http://localhost:${PORT}/kitchen  (PIN: ${KITCHEN_PIN})`);
 });
+
+module.exports = app;

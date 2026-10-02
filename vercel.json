@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "server.js": {
+      "includeFiles": "{public,node_modules/@fontsource-variable,node_modules/@phosphor-icons/web/src,node_modules/gsap/dist,node_modules/lenis/dist}/**"
+    }
+  }
+}
