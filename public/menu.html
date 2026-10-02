@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu and Order | River View Hotel and Bar</title>
+  <meta name="description" content="Order from the River View kitchen and bar. Dine in, room delivery or pickup.">
+  <link rel="stylesheet" href="/fonts/outfit/index.css">
+  <link rel="stylesheet" href="/fonts/geist/index.css">
+  <link rel="stylesheet" href="/icons/regular/style.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/order.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="/">River View <small>Hotel and Bar</small></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i class="ph ph-list"></i></button>
+      <nav class="nav-links">
+        <a href="/hotel">The Hotel</a>
+        <a href="/menu#bar">Bar</a>
+        <a href="/visit">Visit</a>
+        <a href="/track">Track order</a>
+        <a class="btn btn-primary btn-sm" href="/menu" aria-current="page"><i class="ph ph-fork-knife"></i> Order food</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Order from the kitchen</h1>
+      <p class="lead">Choose your dishes and the kitchen gets the order straight away. Pay at the table, to the room attendant, or at pickup.</p>
+    </div>
+  </section>
+
+  <nav class="cats" id="cats" aria-label="Menu categories"><div class="wrap"></div></nav>
+
+  <main class="wrap order-layout">
+    <div id="menu" aria-live="polite">
+      <div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div>
+    </div>
+
+    <aside class="cart" id="cart" aria-label="Your order">
+      <button class="close" id="cart-close" aria-label="Close cart"><i class="ph ph-x"></i></button>
+      <div id="cart-body"></div>
+    </aside>
+  </main>
+
+  <div class="cart-bar" id="cart-bar">
+    <button class="btn btn-primary" id="cart-open"><span><i class="ph ph-shopping-bag"></i> View order (<span id="bar-count">0</span>)</span><span id="bar-total"></span></button>
+  </div>
+
+  <script src="/js/site.js" defer></script>
+  <script src="/js/menu.js" defer></script>
+</body>
+</html>

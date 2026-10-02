@@ -1,0 +1,77 @@
+/* Hotel page */
+.hero-sm { min-height: 88dvh; }
+.hero-sm h1 { font-size: clamp(2.8rem, 8vw, 7rem); max-width: 12ch; }
+.hero-sm .hero-inner { grid-template-columns: 1fr; }
+
+.sec-head { margin-bottom: 3rem; }
+.sec-head .lead { margin-top: 1.25rem; }
+
+/* rooms as a sticky stack: each card slides over the last */
+.rstack { display: grid; gap: 1.5rem; }
+.sc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-card); overflow: hidden; display: grid; transform-origin: 50% 0; }
+.sc .media { aspect-ratio: 16 / 10; border-radius: 0; }
+.sc .body { padding: clamp(1.5rem, 3vw, 3rem); display: flex; flex-direction: column; justify-content: center; gap: 1rem; }
+.sc h3 { font-size: clamp(2rem, 3.6vw, 3rem); }
+.sc .tags { display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; color: var(--muted); font-size: 0.95rem; }
+.sc .tags span { display: inline-flex; align-items: center; gap: 0.45rem; }
+.sc .tags i { color: var(--accent); }
+.sc .btn { align-self: flex-start; margin-top: 0.5rem; }
+.js .rstack { gap: 0; }
+.js .sc { position: sticky; top: calc(78px + var(--i) * 12px); margin-bottom: 1.5rem; box-shadow: 0 -16px 50px rgb(0 0 0 / 0.4); }
+.js .sc .body { padding: 1.25rem 1.25rem 1.5rem; gap: 0.75rem; }
+.js .sc h3 { font-size: 1.7rem; }
+.js .sc .lead { font-size: 0.97rem; }
+.js .sc .btn { margin-top: 0.25rem; }
+@media (min-width: 900px) {
+  .js .sc { top: calc(var(--nav-h) + var(--i) * 16px); grid-template-columns: 1.25fr 1fr; min-height: 64dvh; margin-bottom: 4rem; }
+  .js .sc .body { padding: clamp(1.5rem, 3vw, 3rem); gap: 1rem; }
+  .js .sc h3 { font-size: clamp(2rem, 3.6vw, 3rem); }
+  .js .sc .lead { font-size: 1.0625rem; }
+  .js .sc .media { aspect-ratio: auto; height: 100%; }
+  .js .sc:nth-child(even) { grid-template-columns: 1fr 1.25fr; }
+  .js .sc:nth-child(even) .media { order: 2; }
+  .sc { grid-template-columns: 1.25fr 1fr; }
+}
+
+/* gallery: three columns drifting at different speeds */
+.gal { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.gal .col { display: grid; gap: 1rem; align-content: start; }
+.gal .media { border-radius: var(--r-card); }
+.gal .media img { transition: transform 1s var(--ease); }
+.gal .media:hover img { transform: scale(1.06); }
+.gal .r34 { aspect-ratio: 3 / 4; } .gal .r11 { aspect-ratio: 1; } .gal .r43 { aspect-ratio: 4 / 3; }
+@media (min-width: 700px) { .gal { grid-template-columns: repeat(3, 1fr); } .gal .col:nth-child(2) { margin-top: 5rem; } .gal .col:nth-child(3) { margin-top: 2rem; } }
+
+/* facilities bento: one photo tile and four small tiles */
+.fbento { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+.fbento .tile { min-height: 200px; }
+.fbento .small { padding: 1.6rem; display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; background: linear-gradient(160deg, var(--surface-2), var(--surface)); }
+.fbento .small i { font-size: 1.9rem; color: var(--accent); }
+.fbento .small h3 { font-size: 1.35rem; }
+.fbento .small p { color: var(--muted); font-size: 0.93rem; margin-top: 0.35rem; }
+.fbento .t-big { min-height: 340px; }
+@media (min-width: 900px) {
+  .fbento { grid-template-columns: repeat(4, 1fr); grid-template-rows: 240px 240px; }
+  .fbento .t-big { grid-column: 1 / 3; grid-row: 1 / 3; }
+}
+
+.facts2 { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; }
+.facts2 div { padding: 1.5rem; border: 1px solid var(--line); border-radius: var(--r-card); background: var(--surface); }
+.facts2 dt { color: var(--muted); font-size: 0.85rem; }
+.facts2 dd { margin: 0.3rem 0 0; font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.1rem); letter-spacing: -0.02em; }
+@media (min-width: 900px) { .facts2 { grid-template-columns: repeat(4, 1fr); } }
+
+/* mobile: gallery in two small columns, tighter facts */
+@media (max-width: 699px) {
+  .gal { display: block; columns: 2; column-gap: 0.75rem; }
+  .gal .col { display: contents; }
+  .gal .media { break-inside: avoid; margin-bottom: 0.75rem; }
+  .facts2 div { padding: 1.1rem; }
+  .facts2 dd { font-size: 1.15rem; }
+}
+@media (max-width: 899px) {
+  .fbento { grid-template-columns: 1fr 1fr; }
+  .fbento .t-big { grid-column: 1 / 3; }
+  .fbento .small { min-height: 150px; padding: 1.2rem; gap: 1.25rem; }
+  .fbento .small h3 { font-size: 1.1rem; }
+}

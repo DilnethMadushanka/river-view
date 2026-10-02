@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Track Order | River View Hotel and Bar</title>
+  <link rel="stylesheet" href="/fonts/outfit/index.css">
+  <link rel="stylesheet" href="/fonts/geist/index.css">
+  <link rel="stylesheet" href="/icons/regular/style.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <style>
+    .track { max-width: 560px; padding-bottom: 6rem; }
+    .track form { display: flex; gap: .75rem; margin-top: 2rem; }
+    .track form .input { flex: 1; text-transform: uppercase; }
+    .steps { display: grid; gap: 0; margin-top: 2rem; }
+    .step { display: grid; grid-template-columns: 40px 1fr; gap: 1rem; padding-bottom: 1.75rem; position: relative; color: var(--muted); }
+    .step:not(:last-child)::before { content: ""; position: absolute; left: 19px; top: 40px; bottom: 0; width: 2px; background: var(--line); }
+    .step .dot { width: 40px; height: 40px; border-radius: var(--r-pill); display: grid; place-items: center; border: 1px solid var(--line); background: var(--surface); font-size: 1.2rem; }
+    .step.on { color: var(--text); }
+    .step.on .dot { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+    .step b { display: block; font-weight: 600; }
+    .summary { margin-top: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+    .summary li { display: flex; justify-content: space-between; gap: 1rem; padding-block: .35rem; }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="/">River View <small>Hotel and Bar</small></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i class="ph ph-list"></i></button>
+      <nav class="nav-links">
+        <a href="/hotel">The Hotel</a>
+        <a href="/menu#bar">Bar</a>
+        <a href="/visit">Visit</a>
+        <a href="/track" aria-current="page">Track order</a>
+        <a class="btn btn-primary btn-sm" href="/menu"><i class="ph ph-fork-knife"></i> Order food</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap track">
+    <section class="page-hero" style="padding-inline:0">
+      <h1>Track your order</h1>
+      <p class="lead">Enter the code you received when you placed the order.</p>
+    </section>
+    <form id="f" novalidate>
+      <label class="sr" for="code" style="position:absolute;left:-9999px">Order code</label>
+      <input class="input" id="code" placeholder="RV-1234" autocomplete="off" maxlength="12">
+      <button class="btn btn-primary" type="submit">Check</button>
+    </form>
+    <p class="error-text" id="err" role="alert" style="margin-top:1rem"></p>
+    <div id="result"></div>
+  </main>
+
+  <script src="/js/site.js" defer></script>
+  <script src="/js/track.js" defer></script>
+</body>
+</html>

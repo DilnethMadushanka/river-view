@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>River View Hotel and Bar</title>
+  <meta name="description" content="Rooms, a restaurant and a bar on the river. Order food online and the kitchen starts cooking.">
+  <link rel="stylesheet" href="/fonts/outfit/index.css">
+  <link rel="stylesheet" href="/fonts/geist/index.css">
+  <link rel="stylesheet" href="/icons/regular/style.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      d.classList.add("js");
+      try { if (!sessionStorage.getItem("rv-intro")) d.classList.add("intro"); } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="loader" aria-hidden="true">
+    <div class="loader-word"><span>River</span><span>View</span></div>
+    <div class="loader-line"><i></i></div>
+  </div>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="/">River View <small>Hotel and Bar</small></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i class="ph ph-list"></i></button>
+      <nav class="nav-links">
+        <a href="/hotel">The Hotel</a>
+        <a href="/menu#bar">Bar</a>
+        <a href="/visit">Visit</a>
+        <a href="/track">Track order</a>
+        <a class="btn btn-primary btn-sm magnetic" href="/menu"><i class="ph ph-fork-knife"></i> Order food</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-bg"><img src="/img/hero.jpg?k=wide" width="1600" height="900" alt="The river at River View Hotel at dusk" fetchpriority="high"></div>
+      <div class="hero-sun"></div>
+      <div class="hero-shade"></div>
+      <div class="wrap hero-inner">
+        <div>
+          <h1><span class="w"><span class="wi">Stay,</span></span><span class="w"><span class="wi">dine</span></span><span class="w"><span class="wi">and</span></span><span class="w"><span class="wi">drink</span></span><span class="w"><span class="wi light">on</span></span><span class="w"><span class="wi light">the</span></span><span class="w"><span class="wi light">river.</span></span></h1>
+          <p class="lead">Rooms, a restaurant and a bar beside the water. Order from your room, the terrace, or for pickup.</p>
+          <div class="actions">
+            <a class="btn btn-primary magnetic" href="/menu"><i class="ph ph-fork-knife"></i> Order food</a>
+            <a class="btn btn-ghost magnetic" href="/hotel">See the rooms</a>
+          </div>
+        </div>
+        <div class="hero-card"><img src="/img/hero-inset.jpg?k=tall" width="600" height="800" alt="Dinner served on the terrace"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap statement">
+        <div>
+          <span class="eyebrow">About us</span>
+          <p class="words" id="words">Rooms that look at the water, a kitchen that cooks rice and curry the way it is cooked at home, and a bar that stays open after dinner.</p>
+          <p class="lead">Come for a night, a long lunch or a drink at sunset. Everything is under one roof, a few steps from the river.</p>
+        </div>
+        <div class="collage reveal">
+          <div class="media a"><img class="parallax-img" src="/img/terrace.jpg?k=tall" width="600" height="800" loading="lazy" alt="Terrace tables beside the river"></div>
+          <div class="media b"><img class="parallax-img" src="/img/river.jpg?k=sq" width="600" height="600" loading="lazy" alt="Morning light on the river"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hp" id="rooms">
+      <div class="hp-track">
+        <div class="hp-intro">
+          <h2 class="h2 split">Rooms for one night or a week</h2>
+          <p class="lead">Four room types, all with air conditioning and hot water. Call us for rates and availability.</p>
+          <div><a class="btn btn-ghost" href="/hotel">Explore the hotel <i class="ph ph-arrow-right"></i></a></div>
+        </div>
+        <article class="hp-card">
+          <img src="/img/room-deluxe.jpg?k=tall" width="900" height="1200" loading="lazy" alt="River Deluxe room with a balcony">
+          <div class="cap"><h3>River Deluxe</h3><p>King bed and a private balcony facing the water.</p>
+            <div class="meta"><span><i class="ph ph-bed"></i> King</span><span><i class="ph ph-waves"></i> River view</span></div></div>
+        </article>
+        <article class="hp-card">
+          <img src="/img/room-garden.jpg?k=tall" width="900" height="1200" loading="lazy" alt="Garden Double room">
+          <div class="cap"><h3>Garden Double</h3><p>Quiet ground floor room opening to the garden.</p>
+            <div class="meta"><span><i class="ph ph-bed"></i> Double</span><span><i class="ph ph-tree-palm"></i> Garden</span></div></div>
+        </article>
+        <article class="hp-card">
+          <img src="/img/room-family.jpg?k=tall" width="900" height="1200" loading="lazy" alt="Family Suite with two bedrooms">
+          <div class="cap"><h3>Family Suite</h3><p>Two bedrooms and a sitting area, sleeps up to five.</p>
+            <div class="meta"><span><i class="ph ph-users-three"></i> Up to 5</span><span><i class="ph ph-armchair"></i> Lounge</span></div></div>
+        </article>
+        <article class="hp-card">
+          <img src="/img/room-single.jpg?k=tall" width="900" height="1200" loading="lazy" alt="Single room">
+          <div class="cap"><h3>Single</h3><p>A simple, comfortable room for solo travellers.</p>
+            <div class="meta"><span><i class="ph ph-bed"></i> Single</span><span><i class="ph ph-wifi-high"></i> Wi-Fi</span></div></div>
+        </article>
+      </div>
+      <div class="hp-bar"><i></i></div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2 class="h2 split">From the kitchen and the bar</h2>
+        <div class="bento reveal">
+          <a class="tile photo t-kitchen" href="/menu">
+            <img src="/img/kitchen.jpg?k=tall" width="800" height="1100" loading="lazy" alt="Rice and curry served in clay pots"><span class="grade"></span>
+            <div class="cap"><h3>Restaurant</h3><p>Rice and curry, kottu, fresh river fish and seafood, cooked to order.</p></div>
+          </a>
+          <a class="tile photo t-bar" href="/menu#bar">
+            <img src="/img/bar.jpg?k=wide" width="1200" height="600" loading="lazy" alt="Cocktails on the bar counter"><span class="grade"></span>
+            <div class="cap"><h3>Bar</h3><p>Beer, arrack, cocktails and wine, served at the table or in your room.</p></div>
+          </a>
+          <div class="tile info">
+            <h3>Opening hours</h3>
+            <dl>
+              <div><dt>Breakfast</dt><dd>7:00 to 10:00</dd></div>
+              <div><dt>Lunch and dinner</dt><dd>12:00 to 22:00</dd></div>
+              <div><dt>Bar</dt><dd>11:00 to 23:30</dd></div>
+            </dl>
+          </div>
+          <div class="tile cta">
+            <h3>Order from your phone</h3>
+            <a class="btn magnetic" href="/menu">Order food <i class="ph ph-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Rice and curry</span><span>Kottu</span><span>River fish</span><span>Arrack</span><span>Cocktails</span><span>Watalappan</span>
+        <span>Rice and curry</span><span>Kottu</span><span>River fish</span><span>Arrack</span><span>Cocktails</span><span>Watalappan</span>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="wrap">
+        <h2 class="h2 split">What you get when you stay</h2>
+        <div class="groups">
+          <div class="group reveal">
+            <h3>In the room</h3>
+            <ul>
+              <li><i class="ph ph-snowflake"></i><div><b>Air conditioning</b>Every room, controlled by you.</div></li>
+              <li><i class="ph ph-shower"></i><div><b>Hot water</b>Private bathroom with a rain shower.</div></li>
+              <li><i class="ph ph-wifi-high"></i><div><b>Wi-Fi</b>Free in rooms and in the restaurant.</div></li>
+            </ul>
+          </div>
+          <div class="group reveal" style="--d:120ms">
+            <h3>Around the hotel</h3>
+            <ul>
+              <li><i class="ph ph-bell-ringing"></i><div><b>Room service</b>Order from the menu, we bring it up.</div></li>
+              <li><i class="ph ph-car"></i><div><b>Free parking</b>Secure parking inside the gate.</div></li>
+              <li><i class="ph ph-confetti"></i><div><b>Events</b>Birthdays, weddings and small conferences by the river.</div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="band-bg"><img src="/img/dinner.jpg?k=wide" width="1600" height="900" loading="lazy" alt="Dinner table by the river at night"></div>
+      <div class="band-shade"></div>
+      <div class="wrap">
+        <h2 class="split">Hungry? The kitchen is ready.</h2>
+        <p class="lead">Pick your dishes and the kitchen starts cooking straight away.</p>
+        <a class="btn btn-primary magnetic" href="/menu"><i class="ph ph-fork-knife"></i> Order food</a>
+      </div>
+    </section>
+
+    <section class="visit2" id="visit">
+      <div class="band-bg"><img src="/img/visit.jpg?k=wide" width="1600" height="900" loading="lazy" alt="The hotel from the riverbank at sunset"></div>
+      <div class="band-shade"></div>
+      <div class="wrap">
+        <div>
+          <h2 class="split">Find us on the river</h2>
+          <p class="lead">Rooms, food and drinks, a few steps from the water.</p>
+        </div>
+        <div class="glass vpanel reveal">
+          <dl style="margin:0">
+            <div class="vrow"><span class="ico"><i class="ph ph-map-pin"></i></span><div><dt>Address</dt><dd>River View Hotel, River Road, your town</dd></div></div>
+            <div class="vrow"><span class="ico"><i class="ph ph-phone"></i></span><div><dt>Phone</dt><dd class="big"><a href="tel:+94770000000">+94 77 000 0000</a></dd></div></div>
+            <div class="vrow"><span class="ico"><i class="ph ph-clock"></i></span><div><dt>Kitchen and bar</dt><dd>Kitchen 12:00 to 22:00, bar until 23:30</dd></div></div>
+            <div class="vrow" style="border-bottom:0"><span class="ico"><i class="ph ph-bed"></i></span><div><dt>Check-in and check-out</dt><dd>From 14:00 and until 11:00</dd></div></div>
+          </dl>
+          <div class="acts">
+            <a class="btn btn-primary magnetic" href="tel:+94770000000"><i class="ph ph-phone"></i> Call to book</a>
+            <a class="btn btn-ghost magnetic" href="/menu"><i class="ph ph-fork-knife"></i> Order food</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>River View Hotel and Bar</span>
+      <nav><a href="/hotel">The Hotel</a><a href="/visit">Visit</a><a href="/menu">Menu</a><a href="/track">Track order</a></nav>
+    </div>
+  </footer>
+
+  <script src="/vendor/gsap/gsap.min.js"></script>
+  <script src="/vendor/gsap/ScrollTrigger.min.js"></script>
+  <script src="/vendor/lenis/lenis.min.js"></script>
+  <script src="/js/site.js" defer></script>
+  <script src="/js/fx.js" defer></script>
+  <script src="/js/home.js" defer></script>
+</body>
+</html>

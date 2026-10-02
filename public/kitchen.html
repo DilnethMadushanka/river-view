@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Kitchen | River View</title>
+  <link rel="stylesheet" href="/fonts/outfit/index.css">
+  <link rel="stylesheet" href="/fonts/geist/index.css">
+  <link rel="stylesheet" href="/icons/regular/style.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <style>
+    body { min-height: 100dvh; }
+    .k-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .85rem 1rem; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+    .k-top h1 { font-size: 1.3rem; }
+    .k-top .tools { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+    .tabs { display: flex; gap: .4rem; }
+    .tabs button { padding: .5rem 1rem; border-radius: var(--r-pill); border: 1px solid var(--line); background: none; }
+    .tabs button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+    .conn { font-size: .85rem; color: var(--muted); }
+    .gate { max-width: 360px; margin: 18vh auto; padding: 1rem; display: grid; gap: 1rem; }
+    .board { display: grid; gap: 1rem; padding: 1rem; grid-template-columns: 1fr; align-items: start; }
+    @media (min-width: 900px) { .board { grid-template-columns: repeat(3, 1fr); } }
+    .col h2 { font-size: 1.1rem; margin-bottom: .75rem; display: flex; justify-content: space-between; }
+    .col h2 span { color: var(--muted); font-family: var(--font-body); font-weight: 500; }
+    .col .list { display: grid; gap: .75rem; }
+    .ticket { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-card); padding: 1rem 1.1rem; display: grid; gap: .6rem; }
+    .ticket.fresh { border-color: var(--accent); }
+    .ticket header { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; }
+    .ticket .code { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; }
+    .ticket .age { color: var(--muted); font-size: .85rem; }
+    .ticket .where { font-weight: 600; }
+    .ticket ul li { display: flex; gap: .6rem; padding-block: .15rem; }
+    .ticket ul b { min-width: 1.8rem; color: var(--accent); }
+    .ticket .note { background: var(--accent-soft); border-radius: var(--r-input); padding: .5rem .75rem; font-size: .9rem; }
+    .ticket .row { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
+    .ticket .row .btn { flex: 1; }
+    .ticket .meta { color: var(--muted); font-size: .85rem; display: flex; justify-content: space-between; }
+    .empty { color: var(--muted); padding: 1.5rem; border: 1px dashed var(--line); border-radius: var(--r-card); text-align: center; }
+    .done-list { padding: 0 1rem 2rem; color: var(--muted); font-size: .9rem; }
+    .done-list summary { cursor: pointer; padding-block: .5rem; }
+    .done-list li { padding-block: .25rem; }
+    .stock { padding: 1rem; max-width: 760px; margin-inline: auto; }
+    .stock h2 { margin: 1.5rem 0 .5rem; font-size: 1.2rem; }
+    .stock label { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+    .stock input { width: 20px; height: 20px; accent-color: var(--accent); }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <form class="gate" id="gate">
+    <h1>Kitchen</h1>
+    <div class="field"><label for="pin">PIN</label><input class="input" id="pin" type="password" inputmode="numeric" autocomplete="off"></div>
+    <p class="error-text" id="pin-err" role="alert"></p>
+    <button class="btn btn-primary" type="submit">Open</button>
+  </form>
+
+  <div id="app" hidden>
+    <div class="k-top">
+      <h1>Kitchen orders</h1>
+      <div class="tools">
+        <div class="tabs"><button id="t-orders" aria-pressed="true">Orders</button><button id="t-stock" aria-pressed="false">Availability</button></div>
+        <button class="btn btn-ghost btn-sm" id="sound" aria-pressed="true"><i class="ph ph-speaker-high"></i> Sound on</button>
+        <span class="conn" id="conn">Connecting</span>
+      </div>
+    </div>
+
+    <section id="orders">
+      <div class="board">
+        <div class="col"><h2>New <span id="n-new">0</span></h2><div class="list" id="l-new"></div></div>
+        <div class="col"><h2>Preparing <span id="n-preparing">0</span></h2><div class="list" id="l-preparing"></div></div>
+        <div class="col"><h2>Ready <span id="n-ready">0</span></h2><div class="list" id="l-ready"></div></div>
+      </div>
+      <details class="done-list"><summary id="done-sum">Finished today</summary><ul id="l-done"></ul></details>
+    </section>
+
+    <section id="stock" class="stock" hidden></section>
+  </div>
+
+  <script src="/js/kitchen.js" defer></script>
+</body>
+</html>
